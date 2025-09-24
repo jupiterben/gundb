@@ -1,17 +1,54 @@
 {
   "compilerOptions": {
-    "emitDeclarationOnly": true,
+    "target": "ES2017",
+    "lib": ["ES2017", "DOM"],
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "outDir": "dist",
+    "rootDir": ".",
+    "strict": false,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
     "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "checkJs": false,
+    "noImplicitAny": false,
+    "noImplicitReturns": false,
+    "noImplicitThis": false,
+    "strictNullChecks": false,
+    "strictFunctionTypes": false,
+    "suppressImplicitAnyIndexErrors": true
   },
   "include": [
-    // only compile the type definitions by default.
-    // That is, ignore the files in 'examples/**'
-    "**/*.d.ts"
+    "src/**/*",
+    "index.ts"
   ],
   "exclude": [
-    // Among the type definitions, don't try to compile
-    // the test file which implements bad types.
-    // It implements bad types for testing purposes.
-    "**/*.test-d.ts"
-  ]
+    "node_modules",
+    "dist",
+    "examples",
+    "test",
+    "**/*.test.js",
+    "**/*.test.ts",
+    "**/*.test-d.ts",
+    "hooks",
+    "*.min.js",
+    "index.js",
+    "gun.js",
+    "lib/aws.js",
+    "sea/buffer.js",
+    "sea/shim.js", 
+    "sea/user.js",
+    "types/index.d.ts"
+  ],
+  "ts-node": {
+    "esm": true
+  }
 }
